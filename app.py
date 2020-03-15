@@ -1,4 +1,3 @@
-
 # 引入 flask 套件下的類別和函式，注意不是 requests
 from flask import Flask, request
 
@@ -9,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     # request 為 flask 內建的網路請求物件，可以取出網路請求攜帶的資料，例如：網址參數，ex. name。get 方法取若網址中沒有 name 參數，則預設為 World 字串。例如：localhost:8080/?name=Jack
-    name = request.args.get(name, World)
+    name = request.args.get("name", "World")
     # 伺服器回傳 Hello, name 變數值
     return f'Hello, {name}!'
 
